@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AMCEC</title>
+	<link rel="stylesheet" type="text/css" href="css/mani.css">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+*
+{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box; 
+}
+
+body
+{
+	font-size: 20px;
+	/* overflow: hidden; */
+	color: white;
+	font-family: 'Bree Serif', serif;
+}
+
+
+header
+{
+
+	background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('simages/ban.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.clearfix:after
+{
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0px;
+	clear: both;
+}
+.mani
+{
+	max-width: 1180px;
+	margin: 0 auto;
+
+}
+.bg
+{
+	height: 120px;
+	width: auto;
+	float: left;
+	margin-top: 20px;
+	border-radius: 20%; 
+}
+.nav
+{
+	float: right;
+	margin-top: 60px;
+}
+.nav li
+{
+	display: inline-block;
+	list-style: none;
+	margin-left: 40px;
+}
+.nav li a
+{
+	padding: 5px 0%;
+	color: #fff;
+	text-decoration: none;
+	/*text-transform: uppercase;*/
+	font-size: 90%;
+	font-weight: 100;
+	transition: all ease-in-out 0.48s;
+
+}
+
+.nav li a:hover
+{
+	border-bottom: 2px solid #bf55ec;
+
+}
+.main-webpahe-header
+{
+	width: 1180px;
+	position: absolute;
+	/*border: 1px solid red;*/
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+}
+
+h1
+{
+	color: #fff;
+	font-size: 245%;
+	word-spacing: 5px;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+	/*text-transform: uppercase;*/
+	font-weight: lighter;
+}
+h2
+{
+	color: #fff;
+	font-size: 160%;
+	word-spacing: 5px;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+	/* text-transform: uppercase; */
+	font-weight: lighter;
+}
+
+
+.btn
+{
+	display: inline-block;
+	padding: 10px 30px;
+	font-weight: lighter;
+	text-decoration: none;
+	/*text-transform: uppercase;*/
+	border-radius: 200px;
+	transition: background-color 0.2s,border 0.2s,color 0.2s; 
+}
+.btn-main
+{
+	background-color: transparent;
+	color: #bf55ec;
+	margin-right: 15px; 
+	border: 1px solid #bf55ec;
+}
+
+.btn-main:hover
+{
+	background-color: white; 
+}
+
+.btn-move
+{
+	background-color: transparent;
+	color: #fff;
+	margin-right: 15px; 
+	border: 1px solid #fff;
+}
+
+.btn-move:hover
+{
+	background-color: #bf55ec; 
+}
+
+.animate
+{
+	animation: animateamccollege 1s infinite;
+}
+
+@keyframes animateamccollege
+{
+	0%{color: blue;}
+	25%{color: red;}
+	50%{color: pink;}
+	100%{color: blue;}
+}
+
+.path
+{
+	font-size: 30px;
+	color: yellow;
+	color: #ff26;
+	direction: right;
+}
+.path1
+{
+	font-size: 30px;
+	color: #ff26;
+	direction: left;
+}
+/*/////responsive queries//////*/
+
+@media only screen and (max-width: 1180px)
+{
+	.main-webpahe-header
+	{
+		width: 100%;
+		padding: 0px 2%;
+	}
+}
+
+@media only screen and (max-width: 998px)
+{
+	h1{font-size: 200%;}
+	h2{font-size: 180%;}
+}
+
+@media only screen and (max-width: 768px)
+{
+	h1{font-size: 180%;}
+	h2{font-size: 180%;}
+
+	.nav{display: none;}
+
+	/*.icon{display: inline-block;
+		color: #fff;
+		float: right;
+		margin-top: 30px;
+		margin-right: 20px;
+	}*/
+}
+.main-webpahe-header #para1
+{
+	display: block;
+	width: 500px;
+	height: 200px;
+	letter-spacing: 1px;
+	position: relative;
+	top: 25px;
+}
+.main-webpahe-header #para2
+{
+	display: block;
+	width: 500px;
+	position: absolute;
+	top:180px;
+	left: 600px;
+	letter-spacing: 1px;
+}
+.imagesClass
+{
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+}
+.imagesClass img
+{
+	width: 130px;
+	position: absolute;
+	top: 10px;
+	border-radius: 20px;
+}
+.main-webpahe-header button
+{
+	display: block;
+	margin: 0 auto;
+	outline: none;
+	border: none;
+	background-color: red;
+	width: 100px;
+	height: 30px;
+	border-radius: 10px;
+}
+.main-webpahe-header button a
+{
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+}
+.main-webpahe-header button:hover
+{
+	background-color: skyblue;
+}
+.main-webpahe-header button a:hover
+{
+	color: red;
+}
+</style>
+<body>
+	<header>
+	<div class="imagesClass">
+		<img src="simages/logo.jpg" alt="">
+	</div>
+		<div class="main-webpahe-header">
+			<h1>WELCOME TO <span class="animate">AMC ENGINEERING COLLEGE</span>.</h1>
+			<h2>18th KM, Bannerghatta Main Road, Bengaluru – 560 083.</h2><br>
+			<p id="para1">AMC Group of Institutions was established under the Paramahamsa Foundation Trust and located in Bannerghatta road, Bangalore. The campus has spread out in 52 acres of land with unique style of infrastructure surrounded by green and friendly environment.
+			</p><br>
+			<p id="para2">At AMC College, our UG and PG programs provide a solid foundation for technical training, employment and future growth. AMC College is committed to offering programs that promotes theoretical, analytical and logical growth through selected combinations of general education and program-specific courses.</p>
+			<!--<a href="/AMCEC.php/loginpage.php" target="_blank" class="btn btn-main">STUDENT LOGIN</a>
+			<a href="/AMCEC.php/Time table.php/time.php" target="_blank" class="btn btn-move">TIME TABLE</a>-->
+			<div class="path">
+			<marquee direction="rigth">AMC ENGINEERING COLLEGE 2020-2021</marquee>
+			</div>	
+			<button><a href="index.html">BACK</a></button>
+		</div>
+	</header>
+</body>
+</html>

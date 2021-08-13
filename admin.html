@@ -1,0 +1,375 @@
+<?php
+$show_alrt = false;
+$show_pass_error = false;
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+  include 'partials.php/_dbconnect.php';
+  $name = $_POST['name'];
+  $pass = $_POST['pass'];
+  $c_pass = $_POST['cpass'];
+  
+  $exists = false;
+  $existsql = "select * from admin where Admin_id='$name'";//checking the user exists
+  $res = mysqli_query($con, $existsql);
+  $numexist = mysqli_num_rows($res);
+  if($numexist > 0)
+  {
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong>Sorry This <strong>USN User</strong> Already exists.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>';
+  }
+  else
+  {
+        if(($pass == $c_pass) && $exists == false)
+        {
+        $hash = password_hash($pass,PASSWORD_DEFAULT);  
+                $sql = "INSERT INTO `admin` (`Admin_id`, `password`) VALUES ('$name', '$hash')";
+                $res = mysqli_query($con, $sql);
+            if($res)
+            {
+                $show_alrt = true;
+            }
+            else
+            {
+            $show_pass_error = true;
+            }
+        }
+  }
+}
+
+
+
+?>
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Register</title>
+</head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* width: 100vw;
+    height: 100vh; */
+    /* overflow: hidden; */
+    font-family: sans-serif;
+    /* insert Lato font family here*/
+    font-weight: 700;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    background: #ecf0f3;
+}
+
+.login-div {
+    display: block;
+    width: 1200px;
+    height: 1320px;
+    margin: 0 auto;
+    padding: 60px 35px 35px 35px;
+    /* border: 2px solid black; */
+    border-radius: 40px;
+    /* background: #ecf0f3; */
+    background: #ecf0f3;
+    /* background: grey; */
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    /*this wil make the shaow box-right_side-> y-axis x-axis and shading is given by 20px, box-left_side-> same as above */
+    /* box-shadow: 13px 13px 20px      #b6345b, -13px -13px 20px #da3b63; */
+}
+
+.logo {
+    background: url("simages/logo.jpg") no-repeat;
+    background-size: 100px;
+    /* background-color: red; */
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    /*logo shadow*/
+    box-shadow: 0px 0px 2px #5f5f5f,
+        /*off set*/
+        0px 0px 0px 5px #ecf0f3,
+        /*bottom right*/
+        8px 8px 15px #a7aaaf,
+        /*top left*/
+        -8px -8px 15px #ffffff;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: crimson;
+}
+
+.sub-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 10px;
+    letter-spacing: 2px;
+}
+
+.field {
+    width: 100%;
+    padding: 40px 5px 5px 5px;
+}
+
+.field svg {
+    width: 22px;
+    height: 22px;
+    margin: 0 10px -3px 25px;
+}
+
+.field input {
+    /*Removing the default borders of input tags*/
+    border: none;
+    outline: none;
+    background: none;
+    width: 1050px;
+    /* border: 2px solid black; */
+    font-size: 17px;
+    color: #555;
+    padding: 15px 10px 15px 5px;
+}
+
+.username,
+.password
+
+/*effect*/
+    {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    /* inset-> inside of the text effect shadow*/
+    /*from top*/
+    box-shadow: inset 8px 8px 8px #cbced1,
+        /*for the bottom effect*/
+        inset -8px -8px 8px #ffffff;
+}
+
+.password select {
+    border: none;
+    outline: none;
+    background: none;
+    width: 1050px;
+    font-size: 17px;
+    color: #555;
+    padding: 15px 10px 15px 5px;
+}
+
+/* .field i
+{
+    height: 22px;
+    margin: 0 10px -3px 25px;
+} */
+.signin-btn {
+    outline: none;
+    border: none;
+    /* background: none; */
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    /* border: 2px solid blue; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    /*insert Lato*/
+    text-align: center;
+    background-color: #32df4e;
+    /* add shadow for the login */
+    box-shadow: 3px 3px 8px #b1b1b1,
+        -3px -3px 8px #ffffff;
+    transition: 0.5s ease;
+}
+
+.signin-btn:hover {
+    background: #3cddb8;
+}
+
+.signin-btn:active {
+    background: #1da88a;
+}
+
+.link {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.link a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 15px;
+}
+
+.link span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.re-btn {
+    outline: none;
+    border: none;
+    /* background: none; */
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    /* border: 2px solid blue; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    /*insert Lato*/
+    text-align: center;
+    background-color: #c7c425;
+    /* add shadow for the login */
+    box-shadow: 3px 3px 8px #b1b1b1,
+        -3px -3px 8px #ffffff;
+    transition: 0.5s ease;
+}
+
+.re-btn:hover {
+    background: #40da61;
+}
+</style>
+
+<body>
+    <?php require'partials.php/_nav.php';?>
+    <?php
+    if($show_alrt)
+    {
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong> '.$name.' Your registered successfully.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }
+    // else
+    // {
+    //   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    //   <strong>Error!</strong> Your Not registered successfully.
+    //   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    //     <span aria-hidden="true">&times;</span>
+    //   </button>
+    // </div>';
+    // }
+    if($show_pass_error)
+    {
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error!</strong> '.$name.' Your confime password is not matched successfully.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }
+  
+  
+  
+  
+  
+  
+  ?>
+    <div class="login-div">
+        <div class="logo"></div>
+        <div class="title">Register For</div>
+        <div class="sub-title">Student E-Voting System</div>
+        <div class="field">
+            <form action="/Svoting.php/admin.php" method="post" enctype="multipart/form-data">
+                <div class="username">
+                    <!-- <i class="fas fa-user"> -->
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fill-rule="evenodd"
+                            d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                    </svg>
+                    </i><input type="username" class="user-input" name="name" id="name" placeholder="Enter Your Admin ID"
+                        required /> 
+                <div class="password">
+                    <!-- <i class="fas fa-lock"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                        <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                    </svg>
+                    <input type="password" class="password-input" name="pass" id="pass"
+                        placeholder="Enter Your New Password" required />
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-lock-open"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-unlock-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                        <path fill-rule="evenodd" d="M8.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                    </svg>
+                    <input type="password" class="password-input" name="cpass" id="cpass"
+                        placeholder="Confirm Password Should Be Same As Above" required />
+                </div>
+                <div class="link">
+                    <button class="signin-btn" type="submit">Register Now</button>
+                </div>
+                <div class="link">
+                    <a href="#">Already Registered ?</a><span>or</span>
+                    <a href="login.php">Login</a>
+                </div>
+                <div class="link">
+                    <button class="re-btn" type="reset" value="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- footer block -->
+    <?php require'partials.php/_footer.php';?>
+    <!-- end of footer block -->
+    <!-- java script code -->
+    <!-- <script>
+        function changeStatus()
+        {
+            var status = document.getElementById("ch");
+            // userInput = status.options[status.selectedIndex].value;
+            if(status.value == "VOTER")
+            {
+                document.getElementById("union") .style.visibility="hidden";
+            }
+            else
+            {
+                document.getElementById("union") .style.visibility="visible";
+            }
+        }
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

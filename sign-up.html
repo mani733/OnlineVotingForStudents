@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Register</title>
+</head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* width: 100vw;
+    height: 100vh; */
+    /* overflow: hidden; */
+    font-family: sans-serif;
+    /* insert Lato font family here*/
+    font-weight: 700;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    background: #ecf0f3;
+}
+
+.login-div {
+    display: block;
+    width: 1200px;
+    height: 1320px;
+    margin: 0 auto;
+    padding: 60px 35px 35px 35px;
+    /* border: 2px solid black; */
+    border-radius: 40px;
+    /* background: #ecf0f3; */
+    background: #ecf0f3;
+    /* background: grey; */
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    /*this wil make the shaow box-right_side-> y-axis x-axis and shading is given by 20px, box-left_side-> same as above */
+    /* box-shadow: 13px 13px 20px      #b6345b, -13px -13px 20px #da3b63; */
+}
+
+.logo {
+    background: url("simages/logo.jpg") no-repeat;
+    background-size: 100px;
+    /* background-color: red; */
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    /*logo shadow*/
+    box-shadow: 0px 0px 2px #5f5f5f,
+        /*off set*/
+        0px 0px 0px 5px #ecf0f3,
+        /*bottom right*/
+        8px 8px 15px #a7aaaf,
+        /*top left*/
+        -8px -8px 15px #ffffff;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: crimson;
+}
+
+.sub-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 10px;
+    letter-spacing: 2px;
+}
+
+.field {
+    width: 100%;
+    padding: 40px 5px 5px 5px;
+}
+
+.field svg {
+    width: 22px;
+    height: 22px;
+    margin: 0 10px -3px 25px;
+}
+
+.field input {
+    /*Removing the default borders of input tags*/
+    border: none;
+    outline: none;
+    background: none;
+    width: 1050px;
+    /* border: 2px solid black; */
+    font-size: 17px;
+    color: #555;
+    padding: 15px 10px 15px 5px;
+}
+
+.username,
+.password
+
+/*effect*/
+    {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    /* inset-> inside of the text effect shadow*/
+    /*from top*/
+    box-shadow: inset 8px 8px 8px #cbced1,
+        /*for the bottom effect*/
+        inset -8px -8px 8px #ffffff;
+}
+
+.password select {
+    border: none;
+    outline: none;
+    background: none;
+    width: 1050px;
+    font-size: 17px;
+    color: #555;
+    padding: 15px 10px 15px 5px;
+}
+
+/* .field i
+{
+    height: 22px;
+    margin: 0 10px -3px 25px;
+} */
+.signin-btn {
+    outline: none;
+    border: none;
+    /* background: none; */
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    /* border: 2px solid blue; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    /*insert Lato*/
+    text-align: center;
+    background-color: #32df4e;
+    /* add shadow for the login */
+    box-shadow: 3px 3px 8px #b1b1b1,
+        -3px -3px 8px #ffffff;
+    transition: 0.5s ease;
+}
+
+.signin-btn:hover {
+    background: #3cddb8;
+}
+
+.signin-btn:active {
+    background: #1da88a;
+}
+
+.link {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.link a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 15px;
+}
+
+.link span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.re-btn {
+    outline: none;
+    border: none;
+    /* background: none; */
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    /* border: 2px solid blue; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    /*insert Lato*/
+    text-align: center;
+    background-color: #c7c425;
+    /* add shadow for the login */
+    box-shadow: 3px 3px 8px #b1b1b1,
+        -3px -3px 8px #ffffff;
+    transition: 0.5s ease;
+}
+
+.re-btn:hover {
+    background: #40da61;
+}
+* {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+    font-family: 'Balsamiq Sans', cursive;
+    /* color: #f2f2f2; */
+}
+
+nav {
+    background: #222222;
+    color: #f2f2f2;
+    padding: 10px 40px 10px 70px;
+    /* border: 2px solid #000; */
+    border-left: none;
+    border-right: none;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul .heading {
+    flex: 1;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+nav ul .items {
+    padding: 0 25px;
+    display: inline-flex;
+}
+
+nav ul .items a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 12px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+nav ul .items a:hover {
+    color: crimson;
+}
+
+nav ul .search {
+    height: 40px;
+    width: 240px;
+    display: flex;
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+
+nav ul .search input {
+    height: 100%;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+
+nav ul .search .icons {
+    height: 100%;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    /* background: #000; */
+    border: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0;
+}
+
+nav ul .search .icons:hover {
+    background: crimson;
+    color: white;
+    cursor: pointer;
+}
+
+nav ul .search .icons span:hover {
+    color: white;
+}
+
+nav ul .search .icons span {
+    color: #222222;
+    font-size: 18px;
+}
+
+nav ul li.btn {
+    font-size: 19px;
+    flex: 1;
+    padding: 0 40px;
+    display: none;
+}
+
+nav ul li.btn span {
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 1px solid #115511;
+    border-radius: 5px;
+}
+
+nav ul li.btn:hover span:before {
+    content: '\f00d';
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1052px) {
+    nav {
+        padding: 10px 40px 10px 0px;
+    }
+
+    nav ul .heading {
+        display: none;
+    }
+
+    nav ul .items {
+        flex: 4;
+    }
+}
+.heading img{
+    width: 40px;
+    border-radius: 20px;
+    margin-right:10px;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul li.btn {
+        display: block;
+    }
+
+    nav {
+        z-index: 1;
+        padding: 9px 40px 9px 0;
+    }
+
+    nav ul .items {
+        z-index: -1;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #222222;
+        display: inline-block;
+    }
+
+    nav ul .items li {
+        text-align: center;
+        line-height: 30px;
+        margin: 30px 0;
+    }
+
+    nav ul .items li a {
+        font-size: 19px;
+    }
+}
+</style>
+
+<body>
+    <nav>
+    <ul>
+        <li class="heading"><img src="simages/logo.jpg">Student iVoted!</li>
+        <li class="btn"><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/>
+        <path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm9.927.427l.396.396a.25.25 0 0 0 .354 0l.396-.396A.25.25 0 0 0 13.396 2h-.792a.25.25 0 0 0-.177.427z"/>
+      </svg></span></li>
+	  <div class="items">
+                <li><a href="index.html">Home</a></li>
+                <!--<li><a href="login.php">Login</a></li> -->
+                <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="login.html" style=" font-weight: bold; font-family:">As Voter</a>
+          <a class="dropdown-item" href="plogin.html" style=" font-weight: bold; font-family:">As UN Member</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="adminlogin.html" style=" font-weight: bold; font-family:">As Admin</a>
+        </div>
+      </li>
+      <li><a href="sign-up.html">Signup</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </div>
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="search">
+                <label class="icons">
+                    <span><svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                  </svg></span>
+                </label>
+            </div>
+			</nav>
+    <div class="login-div">
+        <div class="logo"></div>
+        <div class="title">Register For</div>
+        <div class="sub-title">Student E-Voting System</div>
+        <div class="field">
+            <form>
+            <div class="password">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 172 172"
+                        style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g fill="#333333">
+                                <path
+                                    d="M161.7875,63.82813l-67.59062,-26.06875c-5.24063,-2.01562 -11.15312,-2.01562 -16.39375,0l-67.59062,26.06875c-3.62813,1.34375 -6.04688,4.8375 -6.04688,8.73438c0,3.89687 2.41875,7.39063 6.04688,8.73438l18.00625,6.9875v31.30938c0,27.4125 30.90625,30.90625 57.78125,30.90625c26.875,0 57.78125,-3.49375 57.78125,-30.90625v-26.20312c0,-3.09063 -1.47813,-6.04687 -4.03125,-7.79375c-2.55312,-1.74687 -5.77812,-2.15 -8.73437,-1.075l-39.775,15.31875c-3.35937,1.34375 -7.25625,1.34375 -10.61562,0l-67.45625,-26.06875c-0.67187,-0.26875 -0.80625,-0.80625 -0.80625,-1.20937c0,-0.40313 0.13438,-0.94062 0.80625,-1.20937l67.59062,-25.93438c3.35938,-1.34375 7.25625,-1.34375 10.61563,0l67.59062,25.93437c0.80625,0.26875 1.075,0.94063 1.075,1.34375c0,0.13438 0,0.13438 0,0.26875v19.75312c0,2.28437 1.74687,4.03125 4.03125,4.03125c2.28437,0 4.03125,-1.74688 4.03125,-4.03125v-19.75312c0,-4.03125 -2.41875,-7.65937 -6.31563,-9.1375zM167.96875,119.59375v-6.71875c0,-2.28437 -1.74687,-4.03125 -4.03125,-4.03125c-2.28438,0 -4.03125,1.74688 -4.03125,4.03125v6.71875c0,2.28437 1.74687,4.03125 4.03125,4.03125c2.28438,0 4.03125,-1.74688 4.03125,-4.03125z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <!-- <input type="text" class="password-input" name="branch" id="branch" placeholder="Enter Your Branch Name"/> -->
+                    <select name="ch" id="ch" onchange="changeStatus()" required>
+                        <option selected disabled value="">Select As You Want To Sign Up</option>
+                        <option value="VOTER">VOTER</option>
+                        <option value="UNM">UNION MEMBER</option>
+                        </select>
+            </div>
+                <div class="username">
+                    <!-- <i class="fas fa-user"> -->
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fill-rule="evenodd"
+                            d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                    </svg>
+                    <input type="username" pattern="^[A-Za-z\s]{6,15}" title="Name should have 1st letter upper case letters" class="user-input" name="name" id="name" placeholder="Enter Your Name" required />
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-id-card-alt"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-badge-fill"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z" />
+                    </svg>
+                    <input type="text"  pattern="[1][A][M][1][7-9][A-Z][A-Z][0-9][0-9][0-9]" title="This USN should have upper case letters and 10 characters must be there only AMCEC student can signup and 17-19 years Scheme usn students are only allowed" maxlength="10" class="password-input" name="usn" id="usn"
+                        placeholder="Enter Your USN" required />
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-calendar-alt"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar2-date-fill"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 3.5c0-.276.244-.5.545-.5h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1zm7.336 9.29c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm.066-2.544c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2zm-2.957-2.89v5.332H5.77v-4.61h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
+                    </svg>
+                    <input type="date" class="password-input" name="dob" id="dob" min="1950-01-02" max="2002-01-02" title="Your not Eligible for Voting only above 18 Age students are allowed"
+                        placeholder="Enter Your date of Birth"
+                        required/>
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-university"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 172 172"
+                        style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g fill="#333333">
+                                <path
+                                    d="M86,0l-86,39.69231v6.61538h13.23077c0,3.64363 2.94592,6.61538 6.61538,6.61538h132.30769c3.66947,0 6.61538,-2.97176 6.61538,-6.61538h13.23077v-6.61538zM26.46154,59.53846v79.38462h-6.61538c-3.66947,0 -6.61538,2.97176 -6.61538,6.61538v6.61538h145.53846v-6.61538c0,-3.64363 -2.94591,-6.61538 -6.61538,-6.61538h-6.61538v-79.38462h-19.84615v79.38462h-13.23077v-79.38462h-19.84615v79.38462h-13.23077v-79.38462h-19.84615v79.38462h-13.23077v-79.38462zM6.61538,158.76923c-3.66947,0 -6.61538,2.97176 -6.61538,6.61538v6.61538h172v-6.61538c0,-3.64363 -2.94591,-6.61538 -6.61538,-6.61538z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <select name="college" id="college">
+                        <option value="NEW HRN">New Horizan</option>
+                        <option value="AMCEC" selected>AMC Engineeing College</option>
+                        <option value="CMRIT">CMRIT</option>
+                        <option value="VIT">Vemana IT</option>
+                        <option value="T.Jhon">T.Jhon</option>
+                    </select>
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-graduation-cap"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 172 172"
+                        style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g fill="#333333">
+                                <path
+                                    d="M161.7875,63.82813l-67.59062,-26.06875c-5.24063,-2.01562 -11.15312,-2.01562 -16.39375,0l-67.59062,26.06875c-3.62813,1.34375 -6.04688,4.8375 -6.04688,8.73438c0,3.89687 2.41875,7.39063 6.04688,8.73438l18.00625,6.9875v31.30938c0,27.4125 30.90625,30.90625 57.78125,30.90625c26.875,0 57.78125,-3.49375 57.78125,-30.90625v-26.20312c0,-3.09063 -1.47813,-6.04687 -4.03125,-7.79375c-2.55312,-1.74687 -5.77812,-2.15 -8.73437,-1.075l-39.775,15.31875c-3.35937,1.34375 -7.25625,1.34375 -10.61562,0l-67.45625,-26.06875c-0.67187,-0.26875 -0.80625,-0.80625 -0.80625,-1.20937c0,-0.40313 0.13438,-0.94062 0.80625,-1.20937l67.59062,-25.93438c3.35938,-1.34375 7.25625,-1.34375 10.61563,0l67.59062,25.93437c0.80625,0.26875 1.075,0.94063 1.075,1.34375c0,0.13438 0,0.13438 0,0.26875v19.75312c0,2.28437 1.74687,4.03125 4.03125,4.03125c2.28437,0 4.03125,-1.74688 4.03125,-4.03125v-19.75312c0,-4.03125 -2.41875,-7.65937 -6.31563,-9.1375zM167.96875,119.59375v-6.71875c0,-2.28437 -1.74687,-4.03125 -4.03125,-4.03125c-2.28438,0 -4.03125,1.74688 -4.03125,4.03125v6.71875c0,2.28437 1.74687,4.03125 4.03125,4.03125c2.28438,0 4.03125,-1.74688 4.03125,-4.03125z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <!-- <input type="text" class="password-input" name="branch" id="branch" placeholder="Enter Your Branch Name"/> -->
+                    <select name="branch" id="branch" required>
+                        <option selected disabled value="">Select Your Branch Name</option>
+                        <option value="EC">Electronics And Communication</option>
+                        <option value="CSE">Computer Science And Engineering</option>
+                        <option value="ISE">Information Science And Engineering</option>
+                        <option value="EEE">Electrical Engineering</option>
+                        <option value="CV">Civil Engineering</option>
+                        <option value="ME">Machanical Engineering</option>
+                    </select>
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-phone-alt"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
+                    </svg>
+                    <input type="tel" maxlength="10" pattern="[6-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" title="Mobile Number should start with 1st didgit with in 6-9 range and must and should have 10 digits" class="password-input" name="phone" id="phone"
+                        placeholder="Enter Your Phone Number"
+                        required />
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-lock"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                        <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                    </svg>
+                    <input type="password" class="password-input" name="pass" id="pass"
+                        placeholder="Enter Your New Password" required />
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-lock-open"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-unlock-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                        <path fill-rule="evenodd" d="M8.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                    </svg>
+                    <input type="password" class="password-input" name="cpass" id="cpass"
+                        placeholder="Confirm Password Should Be Same As Above" required />
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-lock-open"></i> -->
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-unlock-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                        <path fill-rule="evenodd" d="M8.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                    </svg>
+                    <input type="file" class="password-input" accept=".jpg" name="files" id="files" required/>
+                </div>
+                <div class="password" id="union" style="visibility: hidden;">
+                    <!-- <i class="fas fa-id-card-alt"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 172 172"
+                        style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g fill="#333333">
+                                <path
+                                    d="M66.29167,10.75c-8.22947,0 -15.02957,6.3304 -15.94303,14.33333h-12.72363c-8.88667,0 -16.125,7.23833 -16.125,16.125v96.75c0,8.88667 7.23833,16.125 16.125,16.125h51.09749c-1.34424,-1.69897 -2.55307,-3.49668 -3.63932,-5.375h0.02099c-0.63534,-1.08007 -1.21129,-2.19732 -1.75667,-3.33138c-0.17114,-0.36091 -0.33485,-0.72604 -0.49691,-1.0918c-1.64826,-3.67425 -2.84413,-7.59208 -3.47835,-11.70182h-0.5389c-11.395,0 -22.10637,-4.44501 -30.27637,-12.47168c-0.68083,-0.71667 -1.1839,-1.60802 -1.43473,-2.57552c-0.35833,-1.505 -0.5389,-3.04863 -0.5389,-4.66113v-3.58333c0,-4.945 4.01333,-8.95833 8.95833,-8.95833h30.6403c8.2775,-12.93583 22.75137,-21.5 39.2347,-21.5c1.8275,0 3.61917,0.10694 5.375,0.32194v-0.014c1.82713,0.21054 3.62634,0.52587 5.375,0.94482v-38.87777c0,-8.88667 -7.23833,-16.125 -16.125,-16.125h-12.72363c-0.91346,-8.00293 -7.71357,-14.33333 -15.94303,-14.33333zM66.29167,21.5h25.08333c3.03329,0 5.375,2.34171 5.375,5.375c0,3.03329 -2.34171,5.375 -5.375,5.375h-25.08333c-3.03329,0 -5.375,-2.34171 -5.375,-5.375c0,-3.03329 2.34171,-5.375 5.375,-5.375zM78.83333,50.16667c9.89,0 17.91667,8.02667 17.91667,17.91667c0,9.89 -8.02667,17.91667 -17.91667,17.91667c-9.89,0 -17.91667,-8.02667 -17.91667,-17.91667c0,-9.89 8.02667,-17.91667 17.91667,-17.91667zM125.41667,86c-21.76875,0 -39.41667,17.64792 -39.41667,39.41667c0,21.76875 17.64792,39.41667 39.41667,39.41667c21.76875,0 39.41667,-17.64792 39.41667,-39.41667c0,-21.76875 -17.64792,-39.41667 -39.41667,-39.41667zM146.91667,107.5c0.91644,0 1.83299,0.34926 2.53353,1.04981c1.40108,1.40108 1.40108,3.66597 0,5.06706l-28.66667,28.66667c-0.69875,0.69875 -1.61619,1.04981 -2.53353,1.04981c-0.91733,0 -1.83478,-0.35106 -2.53353,-1.04981l-14.33333,-14.33333c-1.40108,-1.40108 -1.40108,-3.66597 0,-5.06706c1.40108,-1.40108 3.66597,-1.40108 5.06706,0l11.79981,11.79981l26.13314,-26.13314c0.70054,-0.70054 1.61709,-1.04981 2.53353,-1.04981z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <input type="tel" maxlength="12" pattern="[0-9]{12}" title="Aadhar number must have 12 digits" class="password-input" name="aadhar" id="aadhar"
+                        placeholder="Enter Your Aadhar Number"/>
+                </div>
+                <div class="link">
+                    <button class="signin-btn" type="submit">Register Now</button>
+                </div>
+                <div class="link">
+                    <a href="#">Already Registered ?</a><span>or</span>
+                    <a href="login.php">Login</a>
+                </div>
+                <div class="link">
+                    <button class="re-btn" type="reset" value="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- java script code -->
+    <script>
+        function changeStatus()
+        {
+            var status = document.getElementById("ch");
+            // userInput = status.options[status.selectedIndex].value;
+            if(status.value == "VOTER")
+            {
+                document.getElementById("union") .style.visibility="hidden";
+            }
+            else
+            {
+                document.getElementById("union") .style.visibility="visible";
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Contact Us!</title>
+  </head>
+  <style>
+    body
+    {
+      background-color: #efefef;
+    }
+    .logo {
+    background: url("simages/logo.jpg") no-repeat;
+    background-size: 100px;
+    /* background-color: red; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    /*logo shadow*/
+    box-shadow: 0px 0px 2px #5f5f5f,
+        /*off set*/
+        0px 0px 0px 5px #ecf0f3,
+        /*bottom right*/
+        8px 8px 15px #a7aaaf,
+        /*top left*/
+        -8px -8px 15px #ffffff;
+}
+    .contact-box
+    {
+      display: block;
+    width: 600px;
+    height: 520px;
+    margin: 0 auto;
+    padding: 60px 35px 35px 35px;
+    /* border: 2px solid black; */
+    border-radius: 40px;
+    /* background: #ecf0f3; */
+    background: #ecf0f3;
+    /* background: grey; */
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    }
+    input{
+    /*Removing the default borders of input tags*/
+    border: none;
+    outline: none;
+    background: none;
+    width: 450px;
+    height: 60px;
+    /* border:2px solid black; */
+    font-size: 17px;
+    color: #555;
+    padding: 15px 10px 15px 5px;
+}
+textarea{
+    /*Removing the default borders of input tags*/
+    border: none;
+    outline: none;
+    background: none;
+    width: 350px;
+    height: 60px;
+    /* border:2px solid black; */
+    font-size: 17px;
+    color: #555;
+    padding: 15px 10px 15px 5px;
+}
+    .username,
+.password
+
+/*effect*/
+    {
+      margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    /* inset-> inside of the text effect shadow*/
+    /*from top*/
+    box-shadow: inset 8px 8px 8px #cbced1,
+        /*for the bottom effect*/
+        inset -8px -8px 8px #ffffff;
+}
+.contact-box svg {
+    width: 19px;
+    height: 22px;
+    margin: 0 10px -3px 25px;
+}
+.signin-btn {
+    outline: none;
+    border: none;
+    /* background: none; */
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    /* border: 2px solid blue; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    /*insert Lato*/
+    text-align: center;
+    background-color: #32df4e;
+    /* add shadow for the login */
+    box-shadow: 3px 3px 8px #b1b1b1,
+        -3px -3px 8px #ffffff;
+    transition: 0.5s ease;
+}
+
+.signin-btn:hover {
+    background: #3cddb8;
+}
+
+.signin-btn:active {
+    background: #1da88a;
+}
+
+.link {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.link a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.link,
+.btn1 {
+    outline: none;
+    border: none;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.link span {
+    font-size: 12px;
+    font-weight: bold;
+}
+#svgtext textarea
+{
+  width: 550px;
+}
+#svgtext
+{
+  position: relative;
+  bottom: 25px;
+}
+* {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+    font-family: 'Balsamiq Sans', cursive;
+    /* color: #f2f2f2; */
+}
+
+nav {
+    background: #222222;
+    color: #f2f2f2;
+    padding: 10px 40px 10px 70px;
+    /* border: 2px solid #000; */
+    border-left: none;
+    border-right: none;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul .heading {
+    flex: 1;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+nav ul .items {
+    padding: 0 25px;
+    display: inline-flex;
+}
+
+nav ul .items a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 12px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+nav ul .items a:hover {
+    color: crimson;
+}
+
+nav ul .search {
+    height: 40px;
+    width: 240px;
+    display: flex;
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+
+nav ul .search input {
+    height: 100%;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+
+nav ul .search .icons {
+    height: 100%;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    /* background: #000; */
+    border: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0;
+}
+
+nav ul .search .icons:hover {
+    background: crimson;
+    color: white;
+    cursor: pointer;
+}
+
+nav ul .search .icons span:hover {
+    color: white;
+}
+
+nav ul .search .icons span {
+    color: #222222;
+    font-size: 18px;
+}
+
+nav ul li.btn {
+    font-size: 19px;
+    flex: 1;
+    padding: 0 40px;
+    display: none;
+}
+
+nav ul li.btn span {
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 1px solid #115511;
+    border-radius: 5px;
+}
+
+nav ul li.btn:hover span:before {
+    content: '\f00d';
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1052px) {
+    nav {
+        padding: 10px 40px 10px 0px;
+    }
+
+    nav ul .heading {
+        display: none;
+    }
+
+    nav ul .items {
+        flex: 4;
+    }
+}
+.heading img{
+    width: 40px;
+    border-radius: 20px;
+    margin-right:10px;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul li.btn {
+        display: block;
+    }
+
+    nav {
+        z-index: 1;
+        padding: 9px 40px 9px 0;
+    }
+
+    nav ul .items {
+        z-index: -1;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #222222;
+        display: inline-block;
+    }
+
+    nav ul .items li {
+        text-align: center;
+        line-height: 30px;
+        margin: 30px 0;
+    }
+
+    nav ul .items li a {
+        font-size: 19px;
+    }
+}
+  </style>
+  <body>
+	    <nav>
+    <ul>
+        <li class="heading"><img src="simages/logo.jpg">Student iVoted!</li>
+        <li class="btn"><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M14 7H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM2 6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H2z"/>
+        <path fill-rule="evenodd" d="M15 11H1v-1h14v1zM2 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm9.927.427l.396.396a.25.25 0 0 0 .354 0l.396-.396A.25.25 0 0 0 13.396 2h-.792a.25.25 0 0 0-.177.427z"/>
+      </svg></span></li>
+	  <div class="items">
+                <li><a href="index.html">Home</a></li>
+                <!--<li><a href="login.php">Login</a></li> -->
+                <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="login.html" style=" font-weight: bold; font-family:">As Voter</a>
+          <a class="dropdown-item" href="plogin.html" style=" font-weight: bold; font-family:">As UN Member</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="adminlogin.html" style=" font-weight: bold; font-family:">As Admin</a>
+        </div>
+      </li>
+      <li><a href="sign-up.html">Signup</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </div>
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="search">
+                <label class="icons">
+                    <span><svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                  </svg></span>
+                </label>
+            </div>
+			</nav>
+    <h1 class="text-center" style="font-weight:bold; font-size: 50px; color: crimson;">Contact Form!</h1>
+    <div class="contact-box">
+    <div class="logo"></div>
+    <form>
+                <div class="username">
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fill-rule="evenodd"
+                            d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                    </svg><input maxlength="20" type="text" pattern="^[A-Za-z\s]{6,20}" title="Name should have 1st letter upper case letters" maxlength="10" required class="user-input" name="uname" id="uname"
+                        placeholder="Enter Your Name" required/>
+                </div>
+                <div class="password"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+</svg>
+                    <input type="email" required class="password-input" name="email" id="email"
+                        placeholder="Enter The Email id" required/>
+                </div>
+                <div class="password">
+                    <!-- <i class="fas fa-phone-alt"></i> -->
+                    <svg id="svgtext" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg>
+                    <textarea type="text" pattern="^[A-Za-z\s]{6,100}" title="No Spacial symobles are used including comma(,), (),[],{},'',(.) and ect...." maxlength="100" class="password-input" name="cont" id="cont"
+                        placeholder="Enter Your Message" required></textarea>
+                </div>
+                <a href="#"><button type="submit" class="signin-btn">Send Message</button></a>
+                <div class="link">
+                    <a href="#">Student E Voting System</a><span>.</span>
+                    <a href="#"><button class="btn1" type="button" data-toggle="modal"
+                            data-target="#signupBackdrop">2020-2021</button></a>
+                </div>
+    </form>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
